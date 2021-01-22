@@ -112,8 +112,7 @@ const genCard = options => {
 log(`Getting Scripts.JSON`);
 axios({
 	method: 'get',
-	url:
-		'https://raw.githubusercontent.com/ThatOneCoderUwU/ScriptHub/main/Scripts.json',
+	url: `https://raw.githubusercontent.com/ThatOneCoderUwU/ScriptHub/main/Scripts.json?timestamp=${new Date().getTime()}`,
 	responseType: 'stream',
 }).then(response => {
 	log(`Got Scripts.JSON - Looping over Scripts`);
