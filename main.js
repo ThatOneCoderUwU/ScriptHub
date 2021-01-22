@@ -58,8 +58,10 @@ const rmdir = dir => {
 		}
 	})();
 };
-rmdir(`${dataPath}/Cache`);
-rmdir(`${dataPath}/Code Cache`);
+try {
+	rmdir(`${dataPath}/Cache`);
+	rmdir(`${dataPath}/Code Cache`);
+} catch (error) {}
 
 logToLogFile(`-----------------------------------`);
 log(`Starting...`);
