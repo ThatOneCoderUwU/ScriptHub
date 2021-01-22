@@ -50,9 +50,11 @@ log(`Log Location: ${resolve(`${dataPath}/logs`)}`);
 log(`Run Time: ${new Date().toString()}`);
 log(`Script Directory: ${getDir()}`);
 
+let mainWindow;
+
 const createWindow = () => {
 	// Create the browser window.
-	const mainWindow = new BrowserWindow({
+	mainWindow = new BrowserWindow({
 		width: 1280,
 		height: 720,
 		minWidth: 620,
@@ -139,4 +141,9 @@ ipcMain.on('log', (event, ...msg) => {
 
 ipcMain.on('getScriptDir', (event, ...msg) => {
 	event.returnValue = getDir();
+});
+
+ipcMain.on('runFunctionOnWindow', (event, func) => {
+	mainWindow[func]();
+	event.returnValue = true;
 });

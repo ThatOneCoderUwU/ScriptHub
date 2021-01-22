@@ -1,17 +1,51 @@
 {
+	"name": "RovoTechScriptHub",
+	"version": "1.0.0",
+	"description": "RovoTech's Script Hub",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron .",
+		"make": "electron-builder --win"
+	},
+	"keywords": [
+		"RovoTech"
+	],
+	"author": "ThatOneCoder",
 	"dependencies": {
 		"axios": "^0.21.1",
-		"electron": "^11.2.0",
-		"electron-titlebar-windows": "^3.0.0",
-		"growl": "^1.10.5"
+		"electron-titlebar-windows": "^3.0.0"
 	},
-	"name": "scripthub",
-	"version": "1.0.0",
-	"main": "main.js",
-	"repository": "https://github.com/ThatOneCoderUwU/ScriptHub.git",
-	"author": "ThatOneCoderUwU <thatonecoderuwu@gmail.com>",
-	"license": "AGPL-3.0-or-later",
-	"scripts": {
-		"start": "electron ."
+	"devDependencies": {
+		"electron": "^11.2.0",
+		"electron-builder": "^22.9.1"
+	},
+	"build": {
+		"framework": "electron",
+		"compression": "normal",
+		"nsis": {
+			"guid": "7215bee6-7c32-598c-b8ae-31709670ace3",
+			"installerIcon": "./ico.ico",
+			"uninstallerIcon": "./ico.ico",
+			"oneClick": false,
+			"allowToChangeInstallationDirectory": true
+		},
+		"win": {
+			"appId": "com.electron.RovoTechScriptHub",
+			"icon": "./ico.ico",
+			"target": [
+				{
+					"target": "nsis",
+					"arch": [
+						"x64"
+					]
+				},
+				{
+					"target": "portable",
+					"arch": [
+						"x64"
+					]
+				}
+			]
+		}
 	}
 }

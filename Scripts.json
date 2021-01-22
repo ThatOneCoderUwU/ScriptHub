@@ -16,11 +16,11 @@
 		"colour": "purple"
 	},
 	{
-		"title": "Vehicle Simulator: CheckpointTP",
-		"description": "Teleports you through the race using every checkpoint in the race in Vehicle Simulator",
-		"name": "VSimCheckPoint",
-		"url": "https://raw.githubusercontent.com/ThatOneCoderUwU/Snippets/main/VSimCheckpoints",
-		"filename": "VSim CheckpointTP.lua",
-		"colour": "purple"
+		"title": "DevTool: Position Display",
+		"description": "A Developer tool to allow you to display your position",
+		"name": "PosDisplay",
+		"url": "https://raw.githubusercontent.com/ThatOneCoderUwU/Snippets/main/general/PositionDisplay.lua",
+		"filename": "PositionDisplay.lua",
+		"colour": "red"
 	}
 ]
