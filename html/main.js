@@ -1,10 +1,42 @@
-const axios = require('axios');
 const { ipcRenderer } = require('electron');
-
-const getInstaller = name => {
-	return () => {};
+const log = (...a) => {
+	ipcRenderer.sendSync('log', ...a);
 };
 
+log('Initializing Main JS file');
+
+const axios = require('axios');
+
+const getInstaller = id => {
+	return () => {
+		const options = cardOptions[id];
+		try {
+			axios({
+				method: 'get',
+				url: options.url,
+				responseType: 'stream',
+			}).then(response => {
+				if (!ipcRenderer.sendSync('getScriptDir')) {
+					ipcRenderer.sendSync('select-dir');
+				}
+				ipcRenderer.sendSync('save-script', options.filename, response.data);
+				M.toast({
+					html: 'Downloaded Script!',
+				});
+			});
+		} catch (error) {
+			M.toast({
+				html:
+					'An error has occured while downloading a script! Check the console for more information.',
+			});
+			ipcRenderer.sendSync('log_error', error);
+			throw new Error(error);
+		}
+	};
+};
+
+let cardCallBacks = [];
+let cardOptions = [];
 let contentcontainer = document.getElementsByClassName('contentcontainer')[0];
 
 let container;
@@ -28,7 +60,6 @@ const genCont = () => {
 };
 genCont();
 
-let cardCallBacks = [];
 const genCard = options => {
 	/*
     Options Template:
@@ -43,18 +74,19 @@ const genCard = options => {
 	let id = cardCallBacks.length + 1;
 	containerContentCount++;
 
-	cardCallBacks[id] = options.callback || getInstaller(options.name);
+	cardCallBacks[id] = options.callback || getInstaller(id);
+	cardOptions[id] = options;
 
 	let el = document.createElement('div');
 	el.className = 'col s12 m6';
 	el.innerHTML = `
-      <div class="card blue-grey darken-1">
+      <div class="card ${options.colour || 'purple'} darken-1">
         <div class="card-content white-text">
           <span class="card-title">${options.title}</span>
           <p>${options.description}</p>
         </div>
         <div class="card-action">
-          <a onclick="cardCallBacks[${id}]()" id="InstallButton-${
+          <a onclick="cardCallBacks[${id}](${id})" id="InstallButton-${
 		options.name || id.toString()
 	}">${options.text || 'Install/Update'}</a>
         </div>
@@ -77,12 +109,19 @@ const genCard = options => {
 	return el;
 };
 
+log(`Getting Scripts.JSON`);
 axios({
 	method: 'get',
 	url:
 		'https://raw.githubusercontent.com/ThatOneCoderUwU/ScriptHub/main/Scripts.json',
 	responseType: 'stream',
-}).then(function (response) {
+}).then(response => {
+	log(`Got Scripts.JSON - Looping over Scripts`);
 	// response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'));
-	console.log(response);
+	response.data.forEach(element => {
+		log(`Generating Card for Element ${element.name}`);
+		genCard(element);
+	});
+	log(`Removing Loader...`);
+	document.getElementById('loader').remove();
 });
