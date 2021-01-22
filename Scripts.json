@@ -16,6 +16,22 @@
 		"colour": "purple"
 	},
 	{
+		"title": "Tower Of Hell: TeleportOfHell",
+		"description": "Teleports you to the top of the tower - requires you to wait a few seconds",
+		"name": "PosDisplay",
+		"url": "https://raw.githubusercontent.com/ThatOneCoderUwU/Snippets/main/TeleportOfHell",
+		"filename": "TOH TeleportOfHell.lua",
+		"colour": "green"
+	},
+	{
+		"title": "AutoRapBattles: Voter",
+		"description": "A Developer tool to allow you to display your position",
+		"name": "PosDisplay",
+		"url": "https://raw.githubusercontent.com/ThatOneCoderUwU/Snippets/main/AutoRapBattles/Voter.lua",
+		"filename": "AutoRapBattles Voter.lua",
+		"colour": "red"
+	},
+	{
 		"title": "DevTool: Position Display",
 		"description": "A Developer tool to allow you to display your position",
 		"name": "PosDisplay",
