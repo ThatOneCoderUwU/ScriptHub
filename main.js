@@ -1,6 +1,11 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, Menu } = require('electron');
+const { app, BrowserWindow, Menu, dialog, ipcMain } = require('electron');
+const { writeFileSync, readFileSync } = require('fs');
 const path = require('path');
+
+let dataPath = app.getPath('userData');
+console.log(`[RovoTech ScriptHub] Starting...`);
+console.log(`[RovoTech ScriptHub] Data Save Location: ${dataPath}`);
 
 const createWindow = () => {
 	// Create the browser window.
@@ -49,3 +54,32 @@ app.on('window-all-closed', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+const getDir = () => {
+	let x = readFileSync(`${dataPath}/scriptPath`);
+	x = x || '';
+	x = x.toString();
+	return x;
+};
+
+ipcMain.on('select-dir', event => {
+	let dir = dialog.showOpenDialogSync({
+		title:
+			'Select a Directory to place the scripts in (Usually [Path to Synapse or Krnl]>scripts)',
+		properties: ['openDirectory'],
+		defaultPath: getDir(),
+		dontAddToRecent: true,
+	});
+	if (dir) {
+		console.log(`[RovoTech ScriptHub] Saving Script Location as ${dir}`);
+		writeFileSync(`${dataPath}/scriptPath`, dir);
+	} else {
+		console.log(`[RovoTech ScriptHub] Script Location Selection Canceled`);
+	}
+	event.returnValue = dir;
+});
+
+ipcMain.on('save-script', (event, scriptName) => {
+	writeFileSync(`${getDir()}/${scriptName}`);
+	event.returnValue = true;
+});

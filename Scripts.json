@@ -1,0 +1,9 @@
+[
+	{
+		"title": "Vehicle Simulator: CheckpointTP",
+		"description": "Teleports you through the race using every checkpoint in the race in Vehicle Simulator",
+		"name": "VSimCheckPoint",
+		"url": "https://raw.githubusercontent.com/ThatOneCoderUwU/Snippets/main/VSimCheckpoints",
+		"filename": "VSim CheckpointTP.lua"
+	}
+]
