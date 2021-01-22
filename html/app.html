@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>RovoTech&trade; ScriptHub</title>
+		<style>
+			html,
+			body {
+				background: #2a2b2c;
+				color: #ffffff;
+				width: 100vw;
+				min-height: 100vh;
+				position: fixed;
+				top: 32px;
+				left: 0;
+			}
+
+			.titlebar {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+			}
+
+			#particles-js {
+				z-index: -1000;
+				position: absolute;
+				left: 0;
+				top: 0;
+				min-height: 500vh;
+				min-width: 100vw;
+				height: 500vh;
+				display: block;
+			}
+
+			.contentcontainer {
+				height: calc(100vh - 32px);
+				max-width: 85vw;
+				background: #2a2b2c60;
+				backdrop-filter: blur(1px);
+
+				overflow-y: scroll;
+			}
+			::-webkit-scrollbar {
+				width: 10px;
+			}
+
+			/* Track */
+			::-webkit-scrollbar-track {
+				background: #00000033;
+			}
+
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: rgba(136, 136, 136, 0.349);
+			}
+
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+				background: #555;
+			}
+		</style>
+		<link rel="stylesheet" href="materialize.min.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<script src="Titlebar.js"></script>
+		<div id="particles-js"></div>
+		<div class="content">
+			<div class="contentcontainer container">
+				<h3>RovoTech&trade; ScriptHub</h3>
+			</div>
+		</div>
+
+		<script src="main.js"></script>
+		<script src="particles.min.js"></script>
+		<script src="particleloader.js"></script>
+	</body>
+</html>

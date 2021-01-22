@@ -1,0 +1,15 @@
+{
+	"dependencies": {
+		"electron": "^11.2.0",
+		"electron-titlebar-windows": "^3.0.0"
+	},
+	"name": "scripthub",
+	"version": "1.0.0",
+	"main": "main.js",
+	"repository": "https://github.com/ThatOneCoderUwU/ScriptHub.git",
+	"author": "ThatOneCoderUwU <thatonecoderuwu@gmail.com>",
+	"license": "AGPL-3.0-or-later",
+	"scripts": {
+		"start": "electron ."
+	}
+}
