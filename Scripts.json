@@ -21,7 +21,7 @@
 		"name": "PosDisplay",
 		"url": "https://raw.githubusercontent.com/ThatOneCoderUwU/Snippets/main/TeleportOfHell",
 		"filename": "TOH TeleportOfHell.lua",
-		"colour": "green"
+		"colour": "purple"
 	},
 	{
 		"title": "AutoRapBattles: Voter",
@@ -29,7 +29,7 @@
 		"name": "PosDisplay",
 		"url": "https://raw.githubusercontent.com/ThatOneCoderUwU/Snippets/main/AutoRapBattles/Voter.lua",
 		"filename": "AutoRapBattles Voter.lua",
-		"colour": "red"
+		"colour": "purple"
 	},
 	{
 		"title": "DevTool: Position Display",
@@ -37,6 +37,6 @@
 		"name": "PosDisplay",
 		"url": "https://raw.githubusercontent.com/ThatOneCoderUwU/Snippets/main/general/PositionDisplay.lua",
 		"filename": "PositionDisplay.lua",
-		"colour": "red"
+		"colour": "green"
 	}
 ]

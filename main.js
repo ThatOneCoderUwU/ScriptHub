@@ -43,6 +43,24 @@ const log = (...a) => {
 };
 
 let dataPath = app.getPath('userData');
+
+const del = require('del');
+
+const rmdir = dir => {
+	// delete directory recursively
+	(async () => {
+		try {
+			await del(dir);
+
+			console.log(`${dir} is deleted!`);
+		} catch (err) {
+			console.error(`Error while deleting ${dir}.`);
+		}
+	})();
+};
+rmdir(`${dataPath}/Cache`);
+rmdir(`${dataPath}/Code Cache`);
+
 logToLogFile(`-----------------------------------`);
 log(`Starting...`);
 log(`Data Save Location: ${dataPath}`);

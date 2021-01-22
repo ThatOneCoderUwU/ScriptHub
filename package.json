@@ -13,6 +13,7 @@
 	"author": "ThatOneCoder",
 	"dependencies": {
 		"axios": "^0.21.1",
+		"del": "^6.0.0",
 		"electron-titlebar-windows": "^3.0.0",
 		"growl": "^1.10.5"
 	},
