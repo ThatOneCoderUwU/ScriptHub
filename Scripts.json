@@ -16,6 +16,14 @@
 		"colour": "purple"
 	},
 	{
+		"title": "Arsenal: KillAll",
+		"description": "Allows you to press Press E to toggle killing everyone!",
+		"name": "ArsenalKILLALL",
+		"url": "https://raw.githubusercontent.com/ThatOneCoderUwU/Snippets/main/Arsenal/KillAll",
+		"filename": "Arsenal KillAll.lua",
+		"colour": "purple"
+	},
+	{
 		"title": "Tower Of Hell: TeleportOfHell",
 		"description": "Teleports you to the top of the tower - requires you to wait a few seconds",
 		"name": "PosDisplay",
