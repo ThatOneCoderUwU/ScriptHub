@@ -8,11 +8,11 @@
 		"colour": "purple"
 	},
 	{
-		"title": "Arsenal: One Hit Kill",
-		"description": "Kills with a successful hit in Arsenal",
+		"title": "Arsenal: TPKey",
+		"description": "Allows you to press X to teleport to a random player",
 		"name": "ArsenalOneHitKill",
 		"url": "https://raw.githubusercontent.com/ThatOneCoderUwU/Snippets/main/Arsenal/OneHitKill",
-		"filename": "Arsenal OneHitKill.lua",
+		"filename": "Arsenal TPKey.lua",
 		"colour": "purple"
 	},
 	{
