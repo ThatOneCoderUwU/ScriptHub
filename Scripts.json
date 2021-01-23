@@ -32,6 +32,14 @@
 		"colour": "purple"
 	},
 	{
+		"title": "BuildABoat: TPGui",
+		"description": "A script to Teleport you to the end of the Build A Boat for Treasure map.",
+		"name": "BAB-TP",
+		"url": "https://raw.githubusercontent.com/ThatOneCoderUwU/Snippets/main/BuildABoat/TpGui.lua",
+		"filename": "BAB TPGUI.lua",
+		"colour": "purple"
+	},
+	{
 		"title": "DevTool: Position Display",
 		"description": "A Developer tool to allow you to display your position",
 		"name": "PosDisplay",
