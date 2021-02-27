@@ -40,6 +40,14 @@
 		"colour": "purple"
 	},
 	{
+		"title": "General: CatExecutor",
+		"description": "A basic in-roblox script executor! Removes the need for constant alt+tabbing.",
+		"name": "GEN-CATEXEC",
+		"url": "https://raw.githubusercontent.com/ThatOneCoderUwU/Snippets/main/general/CatExecLoader.lua",
+		"filename": "CatExecutor.lua",
+		"colour": "purple"
+	},
+	{
 		"title": "DevTool: Position Display",
 		"description": "A Developer tool to allow you to display your position",
 		"name": "PosDisplay",
